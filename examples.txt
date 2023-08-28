@@ -1,0 +1,12 @@
+Remove resources from PE
+`emit <file> | pestrip -r | dump <outputname>`
+
+Explained:
+Pass the file using `emit` to `pestrip` using the `-r` option for resources, `dump` the output to file.
+
+----------------------------------------
+
+Extract NSIS 
+`emit <file> | xtnsis [ | dump archive/{path} ]`
+Explained:
+Pass the file using `emit` into the NSIS parser `xtnsis`. There are likely multiple files, so pass the multiple units received back into a bracketed object [ ]. In this case, we will dump the files to disk using `dump archive/{path}`: this will create a directory named "archive" and will write the individual files based on their name.
