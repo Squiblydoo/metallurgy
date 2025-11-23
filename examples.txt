@@ -10,3 +10,10 @@ Extract NSIS
 `emit <file> | xtnsis [ | dump archive/{path} ]`
 Explained:
 Pass the file using `emit` into the NSIS parser `xtnsis`. There are likely multiple files, so pass the multiple units received back into a bracketed object [ ]. In this case, we will dump the files to disk using `dump archive/{path}`: this will create a directory named "archive" and will write the individual files based on their name.
+
+
+-----------------------------------------
+List Singlefile dotNet binaries
+ef <file> | dnsfx -l runtimeconfig
+Explained:
+ef is an alias for emit file. Pass the file into the dot net extractor `dnsfx` and list the contents with the -l option, specifying "runtimeconfig" limits the listing of files to files with the name "runtimeconfig". In the case of SingleFile dotnet, this will help identify the interesting executables.
